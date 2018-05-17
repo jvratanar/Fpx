@@ -34,7 +34,7 @@ namespace Fpx
                 FpxVisitor visitor = new FpxVisitor(Errors);
                 
                 if (!gErrorListener.AnyNonRecoverableErrors)
-//                    Console.WriteLine(visitor.Visit(pxFileContext));
+                    Console.WriteLine(visitor.Visit(pxFileContext));
                 DisplayErrors(Errors);
             } // try
             catch (Exception _e)
