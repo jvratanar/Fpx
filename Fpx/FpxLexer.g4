@@ -1,0 +1,131 @@
+lexer grammar FpxLexer;
+
+/*
+ * Lexer rules
+ */
+// Keyword definitions
+CHARSET:                                   'CHARSET';
+AXISVERSION:                              'AXIS-VERSION';
+CODEPAGE:                                  'CODEPAGE';
+LANGUAGE:                                  'LANGUAGE';
+LANGUAGES:                                 'LANGUAGES';
+CREATIONDATE:                               'CREATION-DATE';
+NEXTUPDATE:                                 'NEXT-UPDATE';
+PXSERVER:									'PX-SERVER';
+DIRECTORYPATH:								'DIRECTORY-PATH';
+UPDATEFREQUENCY:							'UPDATE-FREQUENCY';
+TABLEID:									'TABLEID';
+SYNONYMS:									'SYNONYMS';
+DEFAULTGRAPH:								'DEFAULT-GRAPH';
+DECIMALS:                                    'DECIMALS';
+SHOWDECIMALS:                                'SHOWDECIMALS';
+ROUNDING:									'ROUNDING';
+MATRIX:                                     'MATRIX';
+AGGREGALLOWED:								'AGGREGALLOWED';
+AUTOPEN:                                    'AUTOPEN';
+SUBJECTCODE:                                'SUBJECT-CODE';
+SUBJECTAREA:                                'SUBJECT-AREA';
+CONFIDENTIAL:								'CONFIDENTIAL';
+COPYRIGHT:                                   'COPYRIGHT';
+DESCRIPTION:                                'DESCRIPTION';
+TITLE:                                       'TITLE';
+DESCRIPTIONDEFAULT:							'DESCRIPTIONDEFAULT';
+CONTENTS:                                   'CONTENTS';
+UNITS:                                      'UNITS';
+STUB:                                       'STUB';
+HEADING:                                    'HEADING';
+CONTVARIABLE:								'CONTVARIABLE';
+VALUES:                                     'VALUES';
+TIMEVAL:                                    'TIMEVAL';
+CODES:                                      'CODES';
+DOUBLECOLUMN:								'DOUBLECOLUMN';
+PRESTEXT:									'PRESTEXT';
+DOMAIN:										'DOMAIN';
+VARIABLETYPE:								'VARIABLE-TYPE';
+HIERARCHIES:								'HIERARCHIES';
+HIERARCHYLEVELS:							'HIERARCHYLEVELS';
+HIERARCHYLEVELSOPEN:						'HIERARCHYLEVELSOPEN';
+HIERARCHYNAMES:								'HIERARCHYNAMES';
+MAP:										'MAP';
+PARTITIONED:								'PARTITIONED';
+ELIMINATION:                                'ELIMINATION';
+PRECISION:                                  'PRECISION';
+LASTUPDATED:                                'LAST-UPDATED';
+STOCKFA:									'STOCKFA';
+CFPRICES:									'CFPRICES';
+DAYADJ:										'DAYADJ';
+SEASADJ:									'SEASADJ';
+CONTACT:                                    'CONTACT';
+REFPERIOD:                                  'REFPERIOD';
+BASEPERIOD:                                 'BASEPERIOD';
+DATABASE:                                   'DATABASE';
+SOURCE:                                     'SOURCE';
+SURVEY:										'SURVEY';
+LINK:										'LINK';
+INFOFILE:									'INFOFILE';
+FIRSTPUBLISHED:							'FIRST-PUBLISHED';
+METAID:									'META-ID';
+OFFICIALSTATISTICS:						'OFFICIAL-STATISTICS';
+INFO:										'INFO';
+NOTEX:                                      'NOTEX';
+NOTE:                                       'NOTE';
+VALUENOTEX:                                 'VALUENOTEX';
+VALUENOTE:                                  'VALUENOTE';
+CELLNOTEX:                                  'CELLNOTEX';
+CELLNOTE:                                   'CELLNOTE';
+DATASYMBOL1:                                'DATASYMBOL1';
+DATASYMBOL2:                                'DATASYMBOL2';
+DATASYMBOL3:                                'DATASYMBOL3';
+DATASYMBOL4:                                'DATASYMBOL4';
+DATASYMBOL5:                                'DATASYMBOL5';
+DATASYMBOL6:                                'DATASYMBOL6';
+DATASYMBOLSUM:								'DATASYMBOLSUM';
+DATASYMBOLNIL:								'DATASYMBOLNIL';
+DATANOTECELL:                               'DATANOTECELL';
+DATANOTESUM:								'DATANOTESUM';
+DATANOTE:									'DATANOTE';
+KEYS:										'KEYS';
+ATTRIBUTEID:								'ATTRIBUTE-ID';
+ATTRIBUTETEXT:								'ATTRIBUTE-TEXT';
+ATTRIBUTES:									'ATTRIBUTES';
+DATA:                                       'DATA' -> pushMode(IGNORE_DATA);
+
+// Value definitions
+COMMA:                                    ',';
+COLON:									  ':';
+SLO:									  'sl';
+ENG:									  'en';
+//LANG:									  ('sl' | 'en');
+LANGSLO:								  '"' SLO '"';
+LANGENG:								  '"' ENG '"';
+LANGSVAL:								  LANGSLO COMMA LANGENG;		// + because of bilingual matrices
+LANGDECLAR:								  '[' ENG ']';
+BRACKETVALDECLAR:						  '[' [a-z][a-z]* ']';
+DIMDECLAR:									'(' '"' (~[;"=\r\n()])+ '"' ')';	// ("dim")
+YES:										'YES';
+NO:											'NO';
+YESNO:                                      (YES | NO);
+EQUALS:                                    [=];
+SEMICOL:                                   [;];
+LPARENTH:									'(';
+RPARENTH:									')';
+CHARSETVAL:                                 '"ANSI"';
+CODEPAGEVAL:                                '"windows-1250"';
+WHITESPACE:									(' '|'\t')+ -> skip ;
+NEWLINE:									[\r\n]+ -> skip;
+F:										'"' 'F' '"';
+S:										'"' 'S' '"';
+A:										'"' 'A' '"';
+C:										'"' 'C' '"';
+DATETIMEVAL:								'"' [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ' ' [0-9][0-9] ':' [0-9][0-9] '"';		// yyyymmdd hh:mm
+INTVAL:										('+' | '-')? [0-9]+;
+DECVAL:										('+' | '-')? [0-9]+ ('.') [0-9]+;
+TLIST:										'TLIST(' ('A' | 'H' | 'Q' | 'M' | 'W') '1' ')';
+STRINGVAL:									'"' (~[;"\r\n])+ '"';
+MULTILINESTRINGVAL:							'"' ~[;"\r\n](~[;"])* '"';
+ALPHA:										[a-zA-Z]+;
+UNRECOGNIZED_CHAR:										.;
+
+mode IGNORE_DATA;
+ANY:										. -> skip;
+
