@@ -72,9 +72,6 @@
     <None Include="packages.config" />
     <None Include="Test.px" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="backup.txt" />
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -107,8 +107,7 @@ pxfile
 		(ATTRIBUTETEXT EQUALS stringlist SEMICOL
 		ATTRIBUTETEXT LANGDECLAR EQUALS stringlist SEMICOL)??
 		(attributess)??
-		DATA
-		//data
+		data
 		EOF
     ;
 yesno

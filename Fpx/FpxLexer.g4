@@ -88,7 +88,7 @@ KEYS:										'KEYS';
 ATTRIBUTEID:								'ATTRIBUTE-ID';
 ATTRIBUTETEXT:								'ATTRIBUTE-TEXT';
 ATTRIBUTES:									'ATTRIBUTES';
-DATA:                                       'DATA' -> pushMode(IGNORE_DATA);
+DATA:                                       'DATA';// -> pushMode(IGNORE_DATA);
 
 // Value definitions
 COMMA:                                    ',';
