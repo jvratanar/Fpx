@@ -7,81 +7,81 @@ options { tokenVocab=FpxLexer; }
  */
 pxfile
     :   CHARSET EQUALS CHARSETVAL SEMICOL 
-        (AXISVERSION EQUALS str SEMICOL)??
+        (AXISVERSION EQUALS str SEMICOL)?
         CODEPAGE EQUALS CODEPAGEVAL SEMICOL
         LANGUAGE EQUALS LANGSLO SEMICOL
         languages
 		creationdate
-		(nextupdate)??
-		(pxserver)??
-		(directorypath)??
-		(updatefrequency)??
-		(tableid)??
-		(synonym)??
-		(DEFAULTGRAPH EQUALS INTVAL SEMICOL)??
+		(nextupdate)?
+		(pxserver)?
+		(directorypath)?
+		(updatefrequency)?
+		(tableid)?
+		(synonym)?
+		(DEFAULTGRAPH EQUALS INTVAL SEMICOL)?
 		DECIMALS EQUALS INTVAL SEMICOL				// TODO: DECIMALS checking
-		(SHOWDECIMALS EQUALS INTVAL SEMICOL)??
-		(ROUNDING EQUALS INTVAL SEMICOL)??
+		(SHOWDECIMALS EQUALS INTVAL SEMICOL)?
+		(ROUNDING EQUALS INTVAL SEMICOL)?
         MATRIX EQUALS str SEMICOL
-		(AGGREGALLOWED EQUALS yesno SEMICOL)??
-		(AUTOPEN EQUALS yesno SEMICOL)??
+		(AGGREGALLOWED EQUALS yesno SEMICOL)?
+		(AUTOPEN EQUALS yesno SEMICOL)?
         SUBJECTCODE EQUALS str SEMICOL
         subjectareas
-		(CONFIDENTIAL EQUALS str SEMICOL)??
+		(CONFIDENTIAL EQUALS str SEMICOL)?
 		COPYRIGHT EQUALS YES SEMICOL
 		DESCRIPTION EQUALS linesofstring SEMICOL
 		DESCRIPTION LANGDECLAR EQUALS linesofstring SEMICOL
 		TITLE EQUALS linesofstring SEMICOL
 		TITLE LANGDECLAR EQUALS linesofstring SEMICOL
-		(DESCRIPTIONDEFAULT EQUALS yesno SEMICOL)??
+		(DESCRIPTIONDEFAULT EQUALS yesno SEMICOL)?
 		contents
 		unitss
 		stubs
 		headings
-		(contvariables)??
+		(contvariables)?
 		pxvaluess
-		(timevals)??
+		(timevals)?
 		codes
-		(doublecolumns)??
+		(doublecolumns)?
 		(PRESTEXT EQUALS INTVAL SEMICOL
-		 PRESTEXT LANGDECLAR EQUALS INTVAL SEMICOL)??
-		(domains)??
-		(variabletypes)??
-		(hierarchies)??
-		(hierarchylevels)??
-		(hierarchylevelsopen)??
-		(hierarchynames)??
-		(maps)??
-		(partitioneds)??
-		(eliminations)??
-		(precisions)??
+		 PRESTEXT LANGDECLAR EQUALS INTVAL SEMICOL)?
+		(domains)?
+		(variabletypes)?
+		(hierarchies)?
+		(hierarchylevels)?
+		(hierarchylevelsopen)?
+		(hierarchynames)?
+		(maps)?
+		(partitioneds)?
+		(eliminations)?
+		(precisions)?
 		lastupdated
-		(stockfas)??
-		(cfpricess)??
-		(dayadjs)??
-		(seasadjs)??
+		(stockfas)?
+		(cfpricess)?
+		(dayadjs)?
+		(seasadjs)?
 		contacts
-		(refperiods)??
-		(baseperiods)??
+		(refperiods)?
+		(baseperiods)?
 		DATABASE EQUALS linesofstring SEMICOL
 		DATABASE LANGDECLAR EQUALS linesofstring SEMICOL
 		SOURCE EQUALS linesofstring SEMICOL
 		SOURCE LANGDECLAR EQUALS linesofstring SEMICOL
-		(surveys)??
-		(links)??
+		(surveys)?
+		(links)?
 		(INFOFILE EQUALS linesofstring SEMICOL
-		INFOFILE LANGDECLAR EQUALS linesofstring SEMICOL)??
-		(firstpublished)??
-		(metaids)??
-		(OFFICIALSTATISTICS EQUALS yesno SEMICOL)??
+		INFOFILE LANGDECLAR EQUALS linesofstring SEMICOL)?
+		(firstpublished)?
+		(metaids)?
+		(OFFICIALSTATISTICS EQUALS yesno SEMICOL)?
 		(INFO EQUALS linesofstring SEMICOL
-		INFO LANGDECLAR EQUALS linesofstring SEMICOL)??
+		INFO LANGDECLAR EQUALS linesofstring SEMICOL)?
 		notexs
-		(notes)??
-		(valuenotexs)??
-		(valuenotes)??
-		(cellnotexs)??
-		(cellnotes)??
+		(notes)?
+		(valuenotexs)?
+		(valuenotes)?
+		(cellnotexs)?
+		(cellnotes)?
 		DATASYMBOL1 EQUALS str SEMICOL
 		DATASYMBOL1 LANGDECLAR EQUALS str SEMICOL
 		DATASYMBOL2 EQUALS str SEMICOL
@@ -91,22 +91,22 @@ pxfile
 		DATASYMBOL4 EQUALS str SEMICOL
 		DATASYMBOL4 LANGDECLAR EQUALS str SEMICOL
 		(DATASYMBOL5 EQUALS str SEMICOL
-		DATASYMBOL5 LANGDECLAR EQUALS str SEMICOL)??
+		DATASYMBOL5 LANGDECLAR EQUALS str SEMICOL)?
 		(DATASYMBOL6 EQUALS str SEMICOL
-		DATASYMBOL6 LANGDECLAR EQUALS str SEMICOL)??
+		DATASYMBOL6 LANGDECLAR EQUALS str SEMICOL)?
 		(DATASYMBOLSUM EQUALS str SEMICOL
-		DATASYMBOLSUM LANGDECLAR EQUALS str SEMICOL)??
+		DATASYMBOLSUM LANGDECLAR EQUALS str SEMICOL)?
 		(DATASYMBOLNIL EQUALS str SEMICOL
-		DATASYMBOLNIL LANGDECLAR EQUALS str SEMICOL)??
-		(datanotecells)??
+		DATASYMBOLNIL LANGDECLAR EQUALS str SEMICOL)?
+		(datanotecells)?
 		(DATANOTESUM EQUALS str SEMICOL
-		DATANOTESUM LANGDECLAR EQUALS str SEMICOL)??
-		(datanotes)??
-		(keyss)??
-		(ATTRIBUTEID EQUALS stringlist SEMICOL)??
+		DATANOTESUM LANGDECLAR EQUALS str SEMICOL)?
+		(datanotes)?
+		(keyss)?
+		(ATTRIBUTEID EQUALS stringlist SEMICOL)?
 		(ATTRIBUTETEXT EQUALS stringlist SEMICOL
-		ATTRIBUTETEXT LANGDECLAR EQUALS stringlist SEMICOL)??
-		(attributess)??
+		ATTRIBUTETEXT LANGDECLAR EQUALS stringlist SEMICOL)?
+		(attributess)?
 		data
 		EOF
     ;
@@ -179,91 +179,91 @@ subjectareas
 	: subjectarea+
 	;
 subjectarea
-	: SUBJECTAREA LANGDECLAR?? EQUALS str SEMICOL
+	: SUBJECTAREA LANGDECLAR? EQUALS str SEMICOL
 	;
 
 contents
 	: content+
 	;
 content
-	: CONTENTS LANGDECLAR?? EQUALS str SEMICOL
+	: CONTENTS LANGDECLAR? EQUALS str SEMICOL
 	;
 
 unitss
 	: units+
 	;
 units
-	: UNITS LANGDECLAR?? EQUALS str SEMICOL
+	: UNITS LANGDECLAR? EQUALS str SEMICOL
 	;
 
 stubs
 	: stub+
 	;
 stub
-	: STUB LANGDECLAR?? EQUALS stringlist SEMICOL
+	: STUB LANGDECLAR? EQUALS stringlist SEMICOL
 	;	
 
 headings
 	: heading+
 	;
 heading
-	: HEADING LANGDECLAR?? EQUALS stringlist SEMICOL
+	: HEADING LANGDECLAR? EQUALS stringlist SEMICOL
 	;
 
 contvariables
 	: contvariable+
 	;
 contvariable
-	: CONTVARIABLE LANGDECLAR?? EQUALS multistring SEMICOL
+	: CONTVARIABLE LANGDECLAR? EQUALS multistring SEMICOL
 	;
 
 pxvaluess
 	: pxvalues+
 	;
 pxvalues
-	: VALUES LANGDECLAR?? DIMDECLAR EQUALS multistringlist SEMICOL
+	: VALUES LANGDECLAR? DIMDECLAR EQUALS multistringlist SEMICOL
 	;
 
 timevals
 	: timeval+
 	;
 timeval
-	: TIMEVAL LANGDECLAR?? DIMDECLAR EQUALS TLIST COMMA stringlist SEMICOL
+	: TIMEVAL LANGDECLAR? DIMDECLAR EQUALS TLIST COMMA stringlist SEMICOL
 	;
 
 codes
 	: code+
 	;
 code
-	: CODES LANGDECLAR?? DIMDECLAR EQUALS stringlist SEMICOL
+	: CODES LANGDECLAR? DIMDECLAR EQUALS stringlist SEMICOL
 	;
 
 doublecolumns
 	: doublecolumn+
 	;
 doublecolumn
-	: DOUBLECOLUMN LANGDECLAR?? DIMDECLAR EQUALS yesno SEMICOL		// biling
+	: DOUBLECOLUMN LANGDECLAR? DIMDECLAR EQUALS yesno SEMICOL		// biling
 	;
 
 domains
 	: domain+
 	;
 domain
-	: DOMAIN LANGDECLAR?? DIMDECLAR EQUALS multistring SEMICOL
+	: DOMAIN LANGDECLAR? DIMDECLAR EQUALS multistring SEMICOL
 	;
 
 variabletypes
 	: variabletype+
 	;
 variabletype 
-	: VARIABLETYPE LANGDECLAR?? EQUALS multistring SEMICOL
+	: VARIABLETYPE LANGDECLAR? EQUALS multistring SEMICOL
 	;
 
 hierarchies
 	: hierarchy+
 	;
 hierarchy
-	: HIERARCHIES LANGDECLAR?? DIMDECLAR EQUALS hierar_vals SEMICOL
+	: HIERARCHIES LANGDECLAR? DIMDECLAR EQUALS hierar_vals SEMICOL
 	;
 hierar_vals
 	: hierar_val COMMA hierar_vals
@@ -278,35 +278,35 @@ hierarchylevels
 	: hierarchylevel+
 	;
 hierarchylevel
-	: HIERARCHYLEVELS LANGDECLAR?? DIMDECLAR EQUALS INTVAL SEMICOL
+	: HIERARCHYLEVELS LANGDECLAR? DIMDECLAR EQUALS INTVAL SEMICOL
 	;
 
 hierarchylevelsopen
 	: hierarchylevelopen+
 	;
 hierarchylevelopen
-	: HIERARCHYLEVELSOPEN LANGDECLAR?? DIMDECLAR EQUALS INTVAL SEMICOL
+	: HIERARCHYLEVELSOPEN LANGDECLAR? DIMDECLAR EQUALS INTVAL SEMICOL
 	;
 
 hierarchynames
 	: hierarchyname+
 	;
 hierarchyname
-	: HIERARCHYNAMES LANGDECLAR?? DIMDECLAR EQUALS stringlist SEMICOL
+	: HIERARCHYNAMES LANGDECLAR? DIMDECLAR EQUALS stringlist SEMICOL
 	;
 
 maps
 	: map+
 	;
 map
-	: MAP LANGDECLAR?? DIMDECLAR EQUALS stringlist SEMICOL
+	: MAP LANGDECLAR? DIMDECLAR EQUALS stringlist SEMICOL
 	;
 
 partitioneds
 	: partitioned+
 	;
 partitioned
-	: PARTITIONED LANGDECLAR?? DIMDECLAR EQUALS complex_text SEMICOL
+	: PARTITIONED LANGDECLAR? DIMDECLAR EQUALS complex_text SEMICOL
 	;
 
 complex_text
@@ -326,7 +326,7 @@ eliminations
 	: elimination+
 	;
 elimination
-	: ELIMINATION LANGDECLAR?? DIMDECLAR EQUALS elim_val SEMICOL
+	: ELIMINATION LANGDECLAR? DIMDECLAR EQUALS elim_val SEMICOL
 	;
 elim_val
 	: YES
@@ -338,7 +338,7 @@ precisions
 	: precision+
 	;
 precision
-	: PRECISION LANGDECLAR?? multidimdeclar EQUALS INTVAL SEMICOL
+	: PRECISION LANGDECLAR? multidimdeclar EQUALS INTVAL SEMICOL
 	;
 
 multidimdeclar
@@ -354,63 +354,63 @@ stockfas
 	: stockfa+
 	;
 stockfa
-	: STOCKFA LANGDECLAR?? DIMDECLAR?? EQUALS (F | S | A) SEMICOL
+	: STOCKFA LANGDECLAR? DIMDECLAR? EQUALS (F | S | A) SEMICOL
 	;
 
 cfpricess
 	: cfprices+
 	;
 cfprices
-	: CFPRICES LANGDECLAR?? DIMDECLAR?? EQUALS (C | F) SEMICOL
+	: CFPRICES LANGDECLAR? DIMDECLAR? EQUALS (C | F) SEMICOL
 	;
 
 dayadjs
 	: dayadj+
 	;
 dayadj
-	: DAYADJ LANGDECLAR?? DIMDECLAR?? EQUALS yesno SEMICOL
+	: DAYADJ LANGDECLAR? DIMDECLAR? EQUALS yesno SEMICOL
 	;
 
 seasadjs
 	: seasadj+
 	;
 seasadj
-	: SEASADJ LANGDECLAR?? DIMDECLAR?? EQUALS yesno SEMICOL
+	: SEASADJ LANGDECLAR? DIMDECLAR? EQUALS yesno SEMICOL
 	;
 
 contacts
 	: contact+
 	;
 contact
-	: CONTACT LANGDECLAR?? DIMDECLAR?? EQUALS linesofstring SEMICOL
+	: CONTACT LANGDECLAR? DIMDECLAR? EQUALS linesofstring SEMICOL
 	;
 
 refperiods
 	: refperiod+
 	;
 refperiod
-	: REFPERIOD LANGDECLAR?? DIMDECLAR?? EQUALS linesofstring SEMICOL
+	: REFPERIOD LANGDECLAR? DIMDECLAR? EQUALS linesofstring SEMICOL
 	;
 
 baseperiods
 	: baseperiod+
 	;
 baseperiod
-	: BASEPERIOD LANGDECLAR?? DIMDECLAR?? EQUALS linesofstring SEMICOL
+	: BASEPERIOD LANGDECLAR? DIMDECLAR? EQUALS linesofstring SEMICOL
 	;
 
 surveys
 	: survey+
 	;
 survey
-	: SURVEY LANGDECLAR?? EQUALS multistring SEMICOL
+	: SURVEY LANGDECLAR? EQUALS multistring SEMICOL
 	;
 
 links
 	: link+
 	;
 link
-	: LINK LANGDECLAR?? EQUALS multistring SEMICOL 
+	: LINK LANGDECLAR? EQUALS multistring SEMICOL 
 	;
 
 firstpublished
@@ -426,70 +426,70 @@ metaids
 	: metaid+
 	;
 metaid
-	: METAID LANGDECLAR?? DIMDECLAR?? EQUALS str SEMICOL
+	: METAID LANGDECLAR? DIMDECLAR? EQUALS str SEMICOL
 	;
 
 notexs
 	: notex+
 	;
 notex
-	: NOTEX LANGDECLAR?? DIMDECLAR?? EQUALS linesofstring SEMICOL
+	: NOTEX LANGDECLAR? DIMDECLAR? EQUALS linesofstring SEMICOL
 	;
 
 notes
 	: note+
 	;
 note
-	: NOTE LANGDECLAR?? DIMDECLAR?? EQUALS linesofstring SEMICOL
+	: NOTE LANGDECLAR? DIMDECLAR? EQUALS linesofstring SEMICOL
 	;
 
 valuenotexs
 	: valuenotex+
 	;
 valuenotex
-	: VALUENOTEX LANGDECLAR?? DIMDECLAR EQUALS linesofstring SEMICOL
+	: VALUENOTEX LANGDECLAR? DIMDECLAR EQUALS linesofstring SEMICOL
 	;
 
 valuenotes
 	: valuenote+
 	;
 valuenote
-	: VALUENOTE LANGDECLAR?? DIMDECLAR EQUALS linesofstring SEMICOL
+	: VALUENOTE LANGDECLAR? DIMDECLAR EQUALS linesofstring SEMICOL
 	;
 
 cellnotexs
 	: cellnotex+
 	;
 cellnotex
-	: CELLNOTEX LANGDECLAR?? multidimdeclar EQUALS linesofstring SEMICOL
+	: CELLNOTEX LANGDECLAR? multidimdeclar EQUALS linesofstring SEMICOL
 	;
 
 cellnotes
 	: cellnote+
 	;
 cellnote
-	: CELLNOTE LANGDECLAR?? multidimdeclar EQUALS linesofstring SEMICOL
+	: CELLNOTE LANGDECLAR? multidimdeclar EQUALS linesofstring SEMICOL
 	;
 
 datanotecells
 	: datanotecell+
 	;
 datanotecell
-	: DATANOTECELL LANGDECLAR?? multidimdeclar EQUALS str SEMICOL
+	: DATANOTECELL LANGDECLAR? multidimdeclar EQUALS str SEMICOL
 	;
 
 datanotes
 	: datanote+
 	;
 datanote
-	: DATANOTE LANGDECLAR?? multidimdeclar?? EQUALS multistring SEMICOL
+	: DATANOTE LANGDECLAR? multidimdeclar? EQUALS multistring SEMICOL
 	;
 
 keyss
 	: keys+
 	;
 keys
-	: KEYS LANGDECLAR?? DIMDECLAR EQUALS keysval SEMICOL
+	: KEYS LANGDECLAR? DIMDECLAR EQUALS keysval SEMICOL
 	;
 keysval
 	: CODES 
@@ -500,7 +500,7 @@ attributess
 	: attributes+
 	;
 attributes
-	: ATTRIBUTES multidimdeclar?? EQUALS stringlist SEMICOL
+	: ATTRIBUTES multidimdeclar? EQUALS stringlist SEMICOL
 	;
 
 data
